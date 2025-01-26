@@ -4,13 +4,13 @@ from etude.models import Participant
 class Atelier01 (models.Model):
     nom_societe = models.CharField(default="societe", max_length=30)
     description = models.TextField()
-    particiant = models.ManyToManyField(
+    """ particiant = models.ManyToManyField(
         Participant,
         verbose_name=("Participants"),
         related_name="ro_to_couples",
         blank=True,
         on_delete=models.CASCADE,
-    )###
+    )### """
 """     created_at = models.DateTimeField(auto_now_add=True, default = timezone.now)
  """    #role = models.ManyToOneRel
 
