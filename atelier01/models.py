@@ -12,9 +12,6 @@ class Atelier01 (models.Model):
         symmetrical=False,            # Ensures the relationship isn't automatically reciprocal
         through="AtelierParticipant", # Custom intermediary table (if needed)
     )
-    @property
-    def __str__(self):
-        return super().__str__()
 
 class AtelierParticipant(models.Model):
     atelier = models.ForeignKey(Atelier01, on_delete=models.CASCADE)
