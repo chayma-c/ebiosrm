@@ -1,3 +1,5 @@
 from django.contrib import admin
+from atelier02.models import Atelier02, RoTo
 
-# Register your models here.
+admin.site.register(Atelier02)
+admin.site.register(RoTo)

@@ -8,10 +8,18 @@ class Etude (models.Model):
     atelier01   = models.ForeignKey(
         "atelier01.Atelier01",
         verbose_name = "atelier 01: Cadrage et socle de sécurité",
+        related_name = "+",
         on_delete    = models.CASCADE,
         null         = True
     )
-    #atelier02 = models.ForeignKey(Atelier02)
+    atelier02 = models.ForeignKey(
+        "atelier02.Atelier02",
+        verbose_name = "atelier 02: Sources de risques",
+        related_name = "+",
+        on_delete    = models.CASCADE,
+        null         = True
+
+    )
     #atelier03 = models.ForeignKey(Atelier03)
 
 

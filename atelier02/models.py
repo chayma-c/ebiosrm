@@ -1,13 +1,9 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator
 from django.utils.translation import gettext_lazy as _
 from etude.models import Evenement_redoute
 
-class Atelier02(models.Model):
-    #source de risques
-    objectif = "Identifier les Sources de Risque (SR) et leurs Objectifs Visés (OV) en lien avecl'objet de l'étude"
 
-""" 
 class RoTo(models.Model):
     class OrigineRisque(models.TextChoices):
         ETAT = "state", _("État")
@@ -60,7 +56,9 @@ class RoTo(models.Model):
     )
 
     origine_risque = models.CharField(
-        max_length=32, verbose_name=_("Origine du risque"), choices=OrigineRisque.choices
+        max_length=32, 
+        verbose_name=_("Origine du risque"), 
+        choices=OrigineRisque.choices
     )
     objectif_cible = models.TextField(verbose_name=_("Objectif cible"))
     motivation = models.PositiveSmallIntegerField(
@@ -79,7 +77,7 @@ class RoTo(models.Model):
         default=Activite.NON_DEFINIE,
         validators=[MaxValueValidator(4)],
     )
-    est_selectionne = models.BooleanField(verbose_name=_("Est sélectionné"), default=False)
+    '''est_selectionne = models.BooleanField(verbose_name=_("Est sélectionné"), default=False)
     justification = models.TextField(verbose_name=_("Justification"), blank=True)
 
     fields_to_check = ["objectif_cible", "origine_risque"]
@@ -115,6 +113,14 @@ class RoTo(models.Model):
         for evenement_redoute in self.evenements_redoutes.all():
             if evenement_redoute.gravity > gravite and evenement_redoute.is_selected:
                 gravite = evenement_redoute.gravity
-        return gravite
+        return gravite'''
 
- """
+
+class Atelier02(models.Model):
+    #source de risques
+    objectif = "Identifier les Sources de Risque (SR) et leurs Objectifs Visés (OV) en lien avecl'objet de l'étude"
+    SROV = models.ForeignKey(
+        RoTo,
+        on_delete=models.CASCADE,
+        null = True
+        )
