@@ -3,8 +3,9 @@ import { useLayoutEffect } from "react";
 import Loadingpage from "./loading";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import SideNavBar from "../../components/SideNavBar";
 export default function Home() {
-useGSAP(()=>{
+/* useGSAP(()=>{
   let t1= gsap.timeline();
   t1.to(".box",{
     scale : 0 , 
@@ -33,12 +34,13 @@ useGSAP(()=>{
     opacity : 0,
     display : "none" , 
   })
-})
+}) */
   return (
     <> 
- 
-    <div className=" h-screen flex  items-center justify-center ">
+    <div>
+    <SideNavBar/>
     </div>
+    
     </>
   );
 }

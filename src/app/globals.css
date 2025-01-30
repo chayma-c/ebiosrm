@@ -13,7 +13,13 @@
     --foreground: #ededed;
   }
 }
-
+@layer base{
+  body{
+    @apply bg-gray-100;
+    padding:1rem;
+  }
+}
+/*
 body {
   color: var(--foreground);
   background: var(--background);
@@ -22,3 +28,4 @@ body {
 .box{
   box-shadow: 0 0 15px #0aade4;
 }
+*/
