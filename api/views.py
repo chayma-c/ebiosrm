@@ -9,6 +9,7 @@ from .serializers import Atelier01Serializer,AtelierParticipantSerializer,Valeur
 def getAtelierPart(request): 
     items = AtelierParticipant.objects.all()
     serializer = AtelierParticipantSerializer(items,many=True)
+    print(Response(serializer.data))
     return Response(serializer.data)
 
 @api_view(['GET'])

@@ -1,7 +1,7 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from etude.models import Etude
 class Partie_prenante(models.Model):
     class Categorie(models.TextChoices):
         CLIENT = "client", _("Client")
@@ -51,13 +51,18 @@ class Partie_prenante(models.Model):
             self.current_trust,
         )
 
-
-    
 class Atelier03(models.Model):
     objectif = "Identifier les parties prenantes critiques de l'écosystème et construire des scénarios de risque de haut niveau (scénarios stratégiques)."
     partie_prenante = models.ForeignKey(
         Partie_prenante,
-        on_delete=models.CASCADE,
+        on_delete=models.CASCADE, 
         null = True
     )
+    etude = models.ForeignKey(
+        Etude,
+        on_delete=models.CASCADE,
+        null=True,
+        related_name= 'concerned_study'
+    )
 
+#add id to link to the workshop and display its data

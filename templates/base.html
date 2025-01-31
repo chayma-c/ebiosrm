@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EBIOS RM{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-md p-4">
+            <div class="flex items-center mb-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmMzzT_BAzhf0AGkIdHOqJ9E1LNsfm2KeyUA&s" alt="Logo" class="h-10 mr-2">
+                <span class="text-lg font-bold">EBIOS RM Assistant</span>
+            </div>
+            <nav>
+                <ul class="space-y-2">
+                    <li><a href="{% url 'etude_list' %}" class="block p-2 rounded bg-gray-200">Vue d'ensemble</a></li>
+                    <li><a href="#" class="block p-2">Organisation</a></li>
+                    <li class="font-bold">Risque</li>
+                    <li><a href="#" class="block p-2">Analyses de risque</a></li>
+                    <li><a href="#" class="block p-2">Ebios RM</a></li>
+                    <li><a href="#" class="block p-2">Scénarios de risque</a></li>
+                    <li><a href="#" class="block p-2">Vulnérabilités</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Navbar -->
+            <header class="bg-white shadow p-4 flex justify-between items-center">
+                <h1 class="text-xl font-semibold">{% block page_title %}Mes affectations{% endblock %}</h1>
+                <div class="flex items-center">
+                    <span class="mr-4">En différé</span>
+                    <span class="font-bold">Abder</span>
+                </div>
+            </header>
+            
+            <!-- Page Content -->
+            <main class="p-6 overflow-auto">
+                <div class="flex">
+                    <!-- Main Content -->
+                    <main class="flex-1 p-6 bg-gray-100 min-h-screen">
+                        <div class="bg-white shadow-md rounded-lg p-6">
+                            {% block content %}{% endblock %}
+                        </div>
+                    </main>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -20,7 +20,14 @@ class Etude (models.Model):
         null         = True
 
     )
-    #atelier03 = models.ForeignKey(Atelier03)
+    atelier03 = models.ForeignKey(
+        "atelier03.Atelier03",
+        on_delete    = models.CASCADE,
+        related_name = "+",
+        null         = True,
+        verbose_name = "atelier 03: Scénarios stratégiques"
+
+    )
 
 
 #----------------atelier01------------------------

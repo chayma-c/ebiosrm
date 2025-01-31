@@ -39,4 +39,4 @@ class Atelier01 (models.Model):
 class AtelierParticipant(models.Model):
     atelier     = models.ForeignKey(Atelier01, on_delete=models.CASCADE)
     participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
-    date_joined = models.DateField(auto_now_add=True)
+    date_joined = models.DateField()

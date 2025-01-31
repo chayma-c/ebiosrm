@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h2 class="text-xl font-bold text-gray-700 mb-4">
+            Sujet de l'étude: {{ etude.nom }}
+        </h2>
+        <p class="text-gray-700 mb-6">
+            <span class="font-bold">Description:</span> {{ etude.description }}
+        </p>
+
+        <h3 class="text-xl font-bold mb-4">Ateliers</h3>
+        <div class="grid grid-cols-3 gap-6">
+            <a href="{{ atelier_01_url }}" class="p-4 bg-pink-100 border-8 border-pink-500 rounded-lg shadow hover:shadow-lg hover:bg-pink-200 transition">
+                <h4 class="text-lg font-bold">Atelier 01</h4>
+                <p class="text-sm">Cadrage et socle de sécurité</p>
+            </a>
+            <a href="{{ atelier_02_url }}" class="p-4 bg-purple-100 border-8 border-purple-500 rounded-lg shadow hover:shadow-lg hover:bg-purple-200 transition">
+                <h4 class="text-lg font-bold">Atelier 02</h4>
+                <p class="text-sm">Sources de risques</p>
+            </a>
+            <a href="{{ atelier_03_url }}" class="p-4 bg-teal-100 border-8 border-teal-500 rounded-lg shadow hover:shadow-lg hover:bg-teal-200 transition">
+                <h4 class="text-lg font-bold">Atelier 03</h4>
+                <p class="text-sm">Scénarios stratégiques</p>
+            </a>
+            <a href="{{ atelier_04_url }}" class="p-4 bg-yellow-100 border-8 border-yellow-500 rounded-lg shadow hover:shadow-lg hover:bg-yellow-200 transition">
+              <h4 class="text-lg font-bold">Atelier 04</h4>
+              <p class="text-sm">Scénarios opérationnelle (en cours...)</p>
+          </a>
+          <a href="{{ atelier_05_url }}" class="p-4 bg-red-100 border-8 border-red-500 rounded-lg shadow hover:shadow-lg hover:bg-red-200 transition">
+            <h4 class="text-lg font-bold">Atelier 05</h4>
+            <p class="text-sm">Traitement du risque (en cours...)</p>
+        </a>
+        <a href="{{ atelier_06_url }}" class="p-4 bg-indigo-100 border-8 border-indigo-500 rounded-lg shadow hover:shadow-lg hover:bg-indigo-200 transition">
+          <h4 class="text-lg font-bold">Atelier 06</h4>
+          <p class="text-sm">Synthèse (en cours...)</p>
+      </a>
+      </a>
+        </div>
+{% endblock %}
