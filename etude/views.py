@@ -9,7 +9,7 @@ def etude_list(request):
     """View to list all studies, handle study creation, and enable searching."""
     
     query = request.GET.get('q', '')  # Get search query from request
-    etudes = Etude.objects.all()  # Fetch all studies
+    etudes = Etude.objects.all()  # Fetch all studies directly from the data base
 
     if query:
         etudes = etudes.filter(nom__icontains=query)  # Filter studies by name
